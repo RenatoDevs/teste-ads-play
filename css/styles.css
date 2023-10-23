@@ -1,23 +1,375 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "parkson", "san-serif";
+  font-size: 16px;
+  --primary-purple: #B700B7;
+  --secondary-purple: #8C008C;
+  --primary-violet: #1E0C42;
+  --secondary-violet: #8870FF;
+  --text-primary: #000;
+  --text-secondary:#fff;
+  --shadow: linear-gradient(180deg, #0B131F 0%, rgba(11, 19, 31, 0.00) 100%);
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css//styles.css">
-    </link>
-    <!-- js -->
-    <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <title>ADSPLAY</title>
-</head>
+@font-face {
+  font-family: "parkson";
+  src: url(../../../assest/fonts/ParksonPERSONALUSE-DemiBold.otf) format("opentype"), url(../../../assest/fonts/ParksonPERSONALUSE-DemiBold.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: #ccc;
+}
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-md">
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 165px;
+  background: var(--shadow);
+  z-index: 100;
+  position: fixed;
+}
+@media (max-width: 768px) {
+  .navbar {
+    background: var(--primary-violet);
+    min-height: 84px;
+  }
+}
+.navbar .nav-bar {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.navbar .nav-bar .container-fluid {
+  padding: 0;
+}
+.navbar .nav-bar .nav-top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+@media (max-width: 768px) {
+  .navbar .nav-bar .nav-top {
+    border-bottom: none;
+  }
+}
+.navbar .nav-bar .nav-bottom {
+  width: 100%;
+}
+.navbar .nav-bar .nav-bottom .navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.navbar .nav-bar .nav-bottom .navbar-nav .nav-link {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.navbar .nav-bar .navbar-brand {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.navbar .nav-bar .navbar-brand img {
+  height: 80%;
+}
+.navbar .nav-bar .social-idioma {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.navbar .nav-bar .social-idioma .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+.navbar .nav-bar .social-idioma .row .social {
+  padding: 3px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .nav-bar .social-idioma .row .social button img {
+  width: 18px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+}
+main .box-midia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+main .box-midia .bg-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 150px 0 0 0;
+  width: 100%;
+  margin: 0;
+  background: url(../../../assest/ads-img/home-banner.png) no-repeat center;
+  background-size: cover;
+}
+@media (max-width: 576px) {
+  main .box-midia .bg-banner {
+    padding: 100px 0 0 0;
+  }
+}
+main .box-midia .bg-banner .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 0;
+}
+main .box-midia .bg-banner .row .box-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .box-midia .bg-banner .row .box-form form {
+  max-width: 340px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 17px;
+  padding: 10px 0;
+}
+main .box-midia .bg-banner .row .box-form form label {
+  font-family: Helvetica;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+main .box-midia .bg-banner .row .box-form form input, main .box-midia .bg-banner .row .box-form form .form-select, main .box-midia .bg-banner .row .box-form form button {
+  padding: 4px;
+  font-family: Helvetica;
+  width: 100%;
+  border-radius: 15px;
+}
+main .box-midia .bg-banner .row .conteudo-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
+}
+main .box-midia .bg-banner .row .conteudo-banner .col {
+  gap: 30px;
+  padding: 0 10px;
+}
+main .box-midia .bg-banner .row .conteudo-banner .col button {
+  width: 100%;
+  max-width: 367px;
+  border-radius: 30px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  background-color: var(--secondary-violet);
+}
+main .box-midia .bg-banner .row .breadcrumb {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+main .box-midia .bg-banner .row .breadcrumb ul {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+main .box-midia .bg-banner .row .breadcrumb .breadcrumb-item {
+  list-style: none;
+}
+main .box-midia .bg-banner .row .breadcrumb .breadcrumb-item a {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  text-decoration: none;
+}
+main .box-midia .conteudo-midia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  gap: 20px;
+}
+@media (max-width: 576px) {
+  main .box-midia .conteudo-midia {
+    display: none;
+  }
+}
+main .box-midia .conteudo-midia h4 {
+  font-size: 2rem;
+}
+main .box-midia .conteudo-midia h3 {
+  font-size: 2.5rem;
+  color: var(--secondary-violet);
+}
+main .box-midia .conteudo-midia p {
+  max-width: 650px;
+  font-size: 0.9rem;
+  text-align: justify;
+  font-family: Helvetica;
+}
+main .box-midia .midia img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+main .title {
+  font-size: 5rem;
+}
+main .formato {
+  background-color: var(--primary-purple);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+main .formato p {
+  width: 100%;
+  font-size: 1.5rem;
+}
+main .formato .btn-formato button {
+  text-transform: uppercase;
+  color: #B7B7B7;
+}
+main .formato .line {
+  width: 90%;
+  height: 2px;
+}
+main .formato .image-pc {
+  background-color: #EDEDED;
+}
+main .formato .span-formato {
+  font-family: "helvetica";
+  max-width: 600px;
+  font-size: 1.2rem;
+}
+main .formato .format-menu {
+  background-color: var(--secondary-purple);
+}
+main .formato .format-menu .group-menu-formato {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  overflow-x: scroll;
+  gap: 5px;
+}
+main .formato .format-menu .group-menu-formato button {
+  padding: 0;
+  font-family: "helvetica";
+  font-size: 1rem;
+}
+main .cases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .cases .line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .cases .line img {
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-violet);
+}
+main .cases .box-cases {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+main .cases .box-cases .case {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+main .cases .box-cases .case .logo {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(74.04% 74.04% at 50% 50%, rgba(0, 0, 0, 0.53) 0%, #000 100%);
+}
+main .cases .box-cases .case .logo img {
+  width: 100%;
+}
+main .cases .box-cases .case .bg-case {
+  margin: 5px;
+  filter: grayscale(100%);
+}
+main .cases .box-cases .case .bg-case img {
+  width: 100%;
+}
+
+.blog .line {
+  width: 100%;
+}
+.blog span {
+  color: #000;
+}
+.blog img {
+  width: 100%;
+  max-width: 200px;
+}
+.blog .blog-banner-img img {
+  width: 100%;
+  max-width: 700px;
+}
+.blog button {
+  border-radius: 20px;
+}
+
+.btn-social {
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+.btn-social .btn {
+  padding: 0;
+  margin: 0;
+}
+
+/*
+<header>
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid nav-bar">
                 <!-- nav top -->
                 <div class="container-fluid nav-top">
@@ -26,9 +378,8 @@
                             <!-- toggle button nav -->
                             <div class="col-2 center d-md-none ">
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarSupportedContent" data-bs-theme="dark"
-                                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                                    aria-label="Toggle navigation">
+                                    data-bs-target="#navbarSupportedContent" data-bs-theme="dark" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon "></span>
                                 </button>
                             </div>
@@ -128,153 +479,38 @@
             </div>
         </nav>
     </header>
-    <main>
-        <!-- midia -->
-        <div class="container-fluid box-midia">
-            <!-- conteudo banner -->
-            <div class="container-fluid bg-banner">
-                <div class="container ">
-                    <div class="row">
-                        <!-- Brandcrumb -->
-                        <div class="col-12 ">
-                            <div class="breadcrumb " style="--bs-breadcrumb-divider: ' > '">
-                                <ul>
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Soluções - Mídia</a></li>
-                                    <li class="breadcrumb-item"><a href="#"> Mídia Programatica</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Brandcrumb -->
 
-                        <!-- conteudo midia -->
-                        <div class="col-12 col-md-8 conteudo-banner">
-                            <div class="row">
-                                <div class="col">
-                                    <img src="./assest/ads-img/icons/mnitor.png" alt="">
-                                    <h1>MÍDIA PROGRAMÁTICA</h1>
-                                    <h4>
-                                        É possível comprar espaços e anunciar em grandes portais de forma rápida e
-                                        automática
-                                    </h4>
-                                    <button type="submit"
-                                        class="btn  mb-3 align-self-center align-self-sm-start">Marketing
-                                        de
-                                        performance
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- form midia -->
-                        <div class=" col-11 col-md-4  box-form">
-                            <form class="row ">
-                                <div class="col-12 text-start text-md-center">
-                                    <h1 class="text-primary">VAMOS CONVERSAR ?</h1>
-                                </div>
-                                <div class="col-6">
-                                    <label for="inputName" class="form-label">Nome*</label>
-                                    <input type="text" class="form-control" id="inputName" placeholder="Seu nome">
-                                </div>
-                                <div class="col-6">
-                                    <label for="inputPhone" class="form-label">Whatsapp*</label>
-                                    <input type="text" class="form-control" id="inputPhone"
-                                        placeholder="(XX) XXXX - XXXX">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="inputEmail" class="form-label">Email*</label>
-                                    <input type="email" class="form-control" id="inputEmail"
-                                        placeholder="exemple@gmail.com">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="inputCargo" class="form-label">Cargo*</label>
-                                    <select id="inputCargo" class="form-select">
-                                        <option>Front</option>
-                                        <option>Back</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="inputSegmento" class="form-label">Segmento*</label>
-                                    <select id="inputSegmento" class="form-select">
-                                        <option>seg</option>
-                                        <option>Back</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="inputInteresse" class="form-label">Interesse*</label>
-                                    <select id="inputInteresse" class="form-select">
-                                        <option>interesse</option>
-                                        <option>Back</option>
-                                    </select>
-                                </div>
 
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Faça um orçamento</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- conteudo banner -->
-            <!-- conteudo a mais - midia -->
-            <div class="row m-0 conteudo-midia">
-                <div class="col-7">
-                    <h4 class="text-primary">
-                        A MÍDIA PROGRAMÁTICA
-                    </h4>
-                    <h3 class="text-violet">
-                        Uma nova maneira de realizar a compra de anúncios
 
-                    </h3>
-                    <p>
-                        A Mídia Programática possibilita anunciar na internet, na TV, em mobiliário urbano, dentro de
-                        jogos e até no YouTube. Com a Mídia Programática você consegue montar uma estratégia omnichannel
-                        e trabalhar toda a jornada do seu cliente em diferentes canais, otimizando toda a comunicação da
-                        sua marca para seguir um storytelling eficiente e gerenciado alcance e frequência de impactos
-                        sob um único usuário.
-                        Acesse diferentes inventários e agrupe eles sob as mesmas métricas, faça uploads de dados
-                        externos, pixel ou CRM e muito mais! A Mídia Programática é, com certeza, a mídia mais versártil
-                        e completa quando o assunto é alcançar novos usuários e espalhar a mensagem da sua marca.
-                    </p>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center flex-nowrap ">
-                    <div class="midia">
-                        <img src="./assest/ads-img/shutterstock_2182589789 1.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- midia -->
-        <!-- Formatos -->
-        <div class=" container-fluid formato">
+       <!-- Formatos -->
+        <div class=" container-fluid formato bg-primary w-100 text-light p-0 m-0">
             <div class=" container">
-                <div class="row  ">
-                    <div class="row ">
+                <div class="row d-flex justify-content-center align-items-center flex-column   ">
+                    <div class="row p-3  d-flex ">
                         <div class="col-12 col-md-6 w-100 ">
                             <div class="row bg-li">
                                 <div class="col-12 col-md-3">
-                                    <span class="title">FORMATOS</span>
+                                    <h2>FORMATOS</h2>
                                 </div>
                                 <div class="col-12 col-md-9 d-flex justify-content-center align-items-center ">
-                                    <img class="line" src="./assest/ads-img/line.png" alt="linha">
+                                    <img class="line" src="./assest/ads-img/line.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12  d-flex justify-content-center align-items-center">
-                            <p>
+                            <span>
                                 Contamos com uma série de formatos e inventários exclusivos mobile, tais como:
-                            </p>
+                            </span>
                         </div>
                     </div>
 
                 </div>
 
             </div>
-            <div class="container-fluid format-menu">
+            <div class="container-fluid bg-tertiary">
                 <div class="container">
-                    <div class="col-12 btn-formato ">
-                        <div class="btn-group group-menu-formato" role="group">
+                    <div class="col-12 btn-formato  w-100 overflow-x-scroll py-4">
+                        <div class="btn-group " role="group">
                             <button type="button" class="btn  ">Display</button>
                             <button type="button" class="btn ">vídeo advertising</button>
                             <button type="button" class="btn ">Spotify</button>
@@ -302,14 +538,14 @@
                 </div>
             </div>
             <div class=" w-100 m-auto row bg-secondary d-flex flex-wrap flex-column flex-md-row">
-                <div class="col-12 col-md-6 p-5 d-flex justify-content-end align-items-center">
-                    <p class="span-formato">
+                <div class="col-12 col-md-6 p-5">
+                    <span class="span-formato">
                         Esse é o formato mais antigo da mídia programática e, embora o termo “display” seja usado para
                         se referir a qualquer forma de anúncios visuais online, no contexto dos anúncios programáticos
                         são apenas aqueles que aparecem no cabeçalho, no rodapé ou na barra lateral. Entretanto com o
                         frequente avanço da tecnologia, a otimização móvel e o melhor uso dos dados, o display tornou
                         dinâmico o que antes era estático.
-                    </p>
+                    </span>
                 </div>
                 <div class="col-12 col-md-6 image-pc p-5 d-flex justify-content-center align-items-center">
                     <img src="./assest/ads-img/pc-smartphone.png" alt="">
@@ -317,108 +553,58 @@
             </div>
         </div>
         <!-- cases -->
-        <div class=" container container-fluid cases">
+        <div class="container container-fluid cases text-light p-0 m-0">
             <div class="row d-flex justify-content-center align-items-center flex-column ">
                 <div class="row p-3  d-flex ">
                     <div class="col-12 col-md-6 w-100 ">
                         <div class="row bg-li">
                             <div class="col-12 col-md-3 text-primary">
-                                <span class="title">CASES</span>
+                                <h2>CASES</h2>
                             </div>
-                            <div class="col-12 col-md-9 line ">
+                            <div class="col-12 col-md-9 d-flex justify-content-center align-items-center ">
                                 <img class="line" src="./assest/ads-img/line.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row box-cases">
-                    <div class="container-lg ">
-                        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4">
-                            
-                            <div class="col case">
-                                <div class="bg-case">
-                                    <div class="logo">
-                                        <img  src="./assest/ads-img/cases/usaflex_logo.png" alt="">
-                                    </div>
-                                    <img  src="./assest/ads-img/cases/usaflex_back.png" alt="">
-                                </div>
-                            </div>
-                            
-                            <div class="col case">
-                                <div class="bg-case">
-                                    <div class="logo">
-                                        <img  src="./assest/ads-img/cases/ifood_logo.png" alt="">
-                                    </div>
-                                    <img  src="./assest/ads-img/cases/ifood_back.png" alt="">
-                                </div>
-                            </div>
-                            
-                            <div class="col case">
-                                <div class="bg-case">
-                                    <div class="logo">
-                                        <img  src="./assest/ads-img/cases/vale_logo.png" alt="">
-                                    </div>
-                                    <img  src="./assest/ads-img/cases/vale_back.png" alt="">
-                                </div>
-                            </div>
-                            
-                            <div class="col case">
-                                <div class="bg-case">
-                                    <div class="logo">
-                                        <img  src="./assest/ads-img/cases/agrishow_logo.png" alt="">
-                                    </div>
-                                    <img  src="./assest/ads-img/cases/agrishow_back.png" alt="">
-                                </div>
-                            </div>
-                            
-                            <div class="col case">
-                                <div class="bg-case">
-                                    <div class="logo">
-                                        <img  src="./assest/ads-img/cases/center_norte_logo.png" alt="">
-                                    </div>
-                                    <img  src="./assest/ads-img/cases/center_norte_back.png" alt="">
-                                </div>
-                            </div>
-                            
-                            <div class="col case">
-                                <div class="bg-case">
-                                    <div class="logo">
-                                        <img  src="./assest/ads-img/cases/vale_logo.png" alt="">
-                                    </div>
-                                    <img  src="./assest/ads-img/cases/vale_back.png" alt="">
-                                </div>
-                            </div>
-                            
-                            <div class="col case">
-                                <div class="bg-case">
-                                    <div class="logo">
-                                        <img  src="./assest/ads-img/cases/metro_rio_logo.png" alt="">
-                                    </div>
-                                    <img  src="./assest/ads-img/cases/metro_rio_back.png" alt="">
-                                </div>
-                            </div>
-                            
-                            <div class="col case">
-                                <div class="bg-case">
-                                    <div class="logo">
-                                        <img  src="./assest/ads-img/cases/acer_logo.png" alt="">
-                                    </div>
-                                    <img  src="./assest/ads-img/cases/acer_back.png" alt="">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
+                <div class="row box-cases p-0 d-flex justify-content-center align-items-center bd-info ">
+                    <div class="case col-6 col-lg-3 p-0"> <img class="logo"
+                            src="./assest/ads-img/cases/usaflex_logo.png" alt="">
                     </div>
+                    <div class="case col-6 col-lg-3 p-0"> <img class="logo" src="./assest/ads-img/cases/ifood_logo.png"
+                            alt="">
+                    </div>
+                    <div class="case col-6 col-lg-3 p-0"> <img class="logo" src="./assest/ads-img/cases/vale_logo.png"
+                            alt="">
+                    </div>
+                    <div class="case col-6 col-lg-3 p-0"> <img class="logo"
+                            src="./assest/ads-img/cases/agrishow_logo.png" alt="">
+                    </div>
+                    <div class="case col-6 col-lg-3 p-0"> <img class="logo"
+                            src="./assest/ads-img/cases/center_norte_logo.png" alt="">
+                    </div>
+                    <div class="case col-6 col-lg-3 p-0"> <img class="logo" src="./assest/ads-img/cases/vale_logo.png"
+                            alt="">
+                    </div>
+                    <div class="case col-6 col-lg-3 p-0"> <img class="logo"
+                            src="./assest/ads-img/cases/metro_rio_logo.png" alt="">
+                    </div>
+                    <div class="case col-6 col-lg-3 p-0"> <img class="logo" src="./assest/ads-img/cases/acer_logo.png"
+                            alt="">
+                    </div>
+
                 </div>
-                <!-- blog -->
+            </div>
+
+        </div>
+        <!-- blog -->
         <div class="container container-fluid blog text-light py-5 m-0">
             <div class="row d-flex justify-content-center  align-items-center flex-column ">
                 <div class="row p-3  d-flex ">
                     <div class="col-12 col-md-6 w-100 ">
                         <div class="row">
                             <div class="col-12 col-md-3 text-primary">
-                                <span class="title text-primary">BLOG</span>
+                                <h2>BLOG</h2>
                             </div>
                             <div class="col-12 col-md-9 d-flex justify-content-center align-items-center ">
                                 <img class="line" src="./assest/ads-img/line.png" alt="">
@@ -635,7 +821,4 @@
 
 */
 
-
-</body>
-
-</html>
+/*# sourceMappingURL=styles.css.map */
